@@ -153,3 +153,46 @@ npm run attack:sqli -- --target=user-service --severity=high
 | SSRF | Custom | Outbound monitoring | URL whitelist |
 
 ---
+
+## Skills Demonstrated
+
+### Security Engineering
+- WAF rule development
+- Threat modeling (STRIDE)
+- Attack pattern recognition
+- Secure JWT implementation
+
+### DevSecOps
+- Container security (Trivy)
+- Runtime security (Falco)
+- Security-as-code (OPA)
+- SIEM integration
+
+### Cloud-Native
+- Kubernetes security (RBAC, Network Policies)
+- Observability stack
+- Microservices architecture
+
+### Offensive Security
+- OWASP Top 10 exploitation
+- Attack automation
+- Red team methodology
+
+---
+
+## Screenshots
+
+### Security Dashboard
+![Dashboard](docs/images/dashboard.png)
+
+### Attack Timeline
+![Timeline](docs/images/attack-timeline.png)
+
+### Kubernetes Security View
+![K8s](docs/images/k8s-security.png)
+
+---
+
+## License
+
+MIT License
