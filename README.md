@@ -138,3 +138,18 @@ npm run attack:sqli -- --target=user-service --severity=high
 ```
 
 ---
+
+## Attack Simulation Matrix
+
+| Attack Type | Tool | Detection | Mitigation |
+|------------|------|----------|------------|
+| SQL Injection | Custom | WAF rules | Parameterized queries |
+| NoSQL Injection | Custom | Query analysis | Input sanitization |
+| XSS | ZAP | CSP validation | Output encoding |
+| Brute Force | Hydra | Rate limiting | Account lockout |
+| IDOR | Custom | Auth checks | UUID resources |
+| Path Traversal | DirBuster | Path validation | Whitelisting |
+| XXE | Custom | Parser hardening | Disable entities |
+| SSRF | Custom | Outbound monitoring | URL whitelist |
+
+---
