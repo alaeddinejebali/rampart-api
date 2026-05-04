@@ -106,3 +106,35 @@ rampart-api/
 └── .github/
     └── workflows/
 ```
+
+---
+
+## Quick Start
+
+### Clone and Setup
+
+```bash
+git clone https://github.com/alaeddinejebali/rampart-api.git
+cd rampart-api
+./scripts/setup.sh
+```
+
+### Deploy Locally
+
+```bash
+make dev
+```
+
+Access:
+
+- Dashboard: http://localhost:3000  
+- API Gateway: http://localhost:8080  
+- Grafana: http://localhost:9000  
+
+### Run Your First Attack
+
+```bash
+npm run attack:sqli -- --target=user-service --severity=high
+```
+
+---
