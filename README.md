@@ -72,3 +72,37 @@ Most developers learn security *after* being breached. This lab provides a safe 
 5. All events streamed to observability stack.
 
 ---
+
+## Project Structure
+
+```
+rampart-api/
+├── apps/
+│   ├── gateway/          # Core API gateway (Node.js)
+│   ├── dashboard/        # Security monitoring UI (React)
+│   ├── user-service/     # Example microservice (vulnerable)
+│   ├── payment-service/  # Example microservice (vulnerable)
+│   └── attack-simulator/ # Automated attack scripts
+├── infra/
+│   ├── docker/           # Dockerfiles & compose files
+│   ├── kubernetes/       # K8s manifests
+│   └── helm/             # Helm charts
+├── security/
+│   ├── waf-rules/        # ModSecurity custom rules
+│   ├── policies/         # OPA policies (future)
+│   └── threat-intel/     # Attack signatures
+├── observability/
+│   ├── prometheus/
+│   ├── grafana/
+│   └── loki/
+├── docs/
+│   ├── architecture.md
+│   ├── attack-playbook.md
+│   └── deployment.md
+├── scripts/
+│   ├── setup.sh
+│   ├── attack.sh
+│   └── benchmark.sh
+└── .github/
+    └── workflows/
+```
