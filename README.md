@@ -63,3 +63,12 @@ Most developers learn security *after* being breached. This lab provides a safe 
 │ └─ Alert Manager (Incidents)               │
 └─────────────────────────────────────────────┘
 
+### Data Flow
+
+1. Attack traffic hits WAF → inspected, logged, scored  .
+2. Legitimate requests proceed through rate limiter.
+3. JWT validation ensures authentication.
+4. Routed to appropriate microservice.
+5. All events streamed to observability stack.
+
+---
