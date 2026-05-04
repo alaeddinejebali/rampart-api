@@ -17,3 +17,49 @@ Most developers learn security *after* being breached. This lab provides a safe 
 - Practice incident response without real consequences.
 
 ---
+
+## Architecture
+
+┌─────────────────────────────────────────────┐
+│     Attack Simulation Layer                  │
+│  (OWASP ZAP, Custom Scripts)                │
+└──────────────────┬──────────────────────────┘
+                   │
+┌──────────────────▼──────────────────────────┐
+│         Rampart API Gateway                 │
+│  ┌────────────────────────────────────────┐ │
+│  │  WAF Layer (ModSecurity + OWASP CRS)   │ │
+│  ├────────────────────────────────────────┤ │
+│  │  Rate Limiter (Redis-backed)           │ │
+│  ├────────────────────────────────────────┤ │
+│  │  JWT Validator                         │ │
+│  ├────────────────────────────────────────┤ │
+│  │  Request Logger (Structured)           │ │
+│  ├────────────────────────────────────────┤ │
+│  │  Threat Analyzer (Pattern Matching)    │ │
+│  └────────────────────────────────────────┘ │
+└──────────────────┬──────────────────────────┘
+                   │
+      ┌────────────┼────────────┬────────────┐
+      │            │            │            │
+   ┌──▼───┐    ┌───▼────┐   ┌───▼────┐   ┌──▼─────┐
+   │ User │    │ Payment│   │ Upload │   │ Admin  │
+   │Svc   │    │Svc     │   │Svc     │   │Svc     │
+   └──┬───┘    └───┬────┘   └───┬────┘   └───┬────┘
+      │            │            │            │
+      └────────────┴────────────┴────────────┘
+                   │
+┌──────────────────▼──────────────────────────┐
+│ Data Layer                                  │
+│ ├─ MongoDB (Application Data)               │
+│ ├─ Redis (Sessions, Rate Limits)            │
+│ └─ Loki (Security Events)                   │
+└─────────────────────────────────────────────┘
+                   │
+┌──────────────────▼──────────────────────────┐
+│ Security Operations Center                  │
+│ ├─ Prometheus (Metrics)                    │
+│ ├─ Grafana (Dashboards)                    │
+│ └─ Alert Manager (Incidents)               │
+└─────────────────────────────────────────────┘
+
