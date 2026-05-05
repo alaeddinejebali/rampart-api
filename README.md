@@ -1,5 +1,9 @@
 # Rampart API
- 
+
+> 🚧 **Heads up!**  
+> This is my homelab project and it's still a work in progress.  
+> I'm building it step by step, so things might be broken, missing, or change frequently.
+
 ## Overview
  
 **Rampart API** is a cloud-native, security-focused API gateway designed to simulate, detect, and mitigate real-world web attacks.
