@@ -1,7 +1,7 @@
 # Rampart API
 
-> 🚧 **Heads up!**  
-> This is my homelab project and it's still a work in progress.  
+> ## 🚧 Project status
+> This is my homelab project and it's still a work in progress (**not finished**).  
 > I'm building it step by step, so things might be broken, missing, or change frequently.
 
 ## Overview
